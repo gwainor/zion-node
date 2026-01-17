@@ -1,0 +1,48 @@
+{
+  "name": "@zion/logger",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "pnpm run build:esm && pnpm run build:cjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && echo '{\"type\": \"commonjs\"}' > dist/cjs/package.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwainor/zion-node.git",
+    "directory": "packages/logger"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "pino": "^10.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@zion/typescript": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}
