@@ -1,0 +1,11 @@
+{
+  "name": "@zion/typescript",
+  "version": "0.0.1",
+  "files": ["./base.json"],
+  "keywords": [],
+  "author": {
+    "url": "https://gokhan.tr",
+    "name": "Gokhan Ozturk"
+  },
+  "license": "ISC"
+}

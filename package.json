@@ -1,0 +1,32 @@
+{
+  "name": "zion-node",
+  "version": "1.0.0",
+  "description": "Reusable Node.js packages monorepo",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "pnpm -r --filter './packages/**' run build",
+    "clean": "pnpm -r --filter './packages/**' run clean",
+    "test": "pnpm -r test"
+  },
+  "keywords": [
+    "monorepo",
+    "nodejs",
+    "utilities"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwainor/zion-node.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "prettier": "@zion/prettier",
+  "devDependencies": {
+    "prettier": "^3.8.0",
+    "typescript": "^5.9.3"
+  }
+}
